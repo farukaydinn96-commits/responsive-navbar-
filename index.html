@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Responsive Navbar</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">My Website</div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="#" class="action-button">Get Started</a>
+
+        <div class="toggle-button">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+
+      <div class="dropdown-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" class="action-button">Get Started</a></li>
+      </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Welcome</h1>
+            <p>This is a responsive navbar example.</p>
+            </section>
+    </main>
+
+    <script>
+      const toggleButton = document.querySelector(".toggle-button");
+      const toggleBtnIcon = document.querySelector(".toggle-button i");
+      const dropDownMenu = document.querySelector(".dropdown-menu");
+
+      toggleButton.onclick = function () {
+        dropDownMenu.classList.toggle("open");
+        const isOpen = dropDownMenu.classList.contains("open");
+
+        toggleBtnIcon.className = isOpen
+          ? "fa-solid fa-xmark"
+          : "fa-solid fa-bars";
+      };
+    </script>
+  </body>
+</html>
